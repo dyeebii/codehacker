@@ -21,7 +21,6 @@ mix.styles([
 	'resources/assets/css/libs/font-awesome.css',
 	'resources/assets/css/libs/metisMenu.css',
 	'resources/assets/css/libs/sb-admin-2.css',
-	'resources/assets/css/libs/styles.css',
 ],'./public/css/libs.css')
 .scripts([
 	'resources/assets/js/libs/bootstrap.js',
@@ -29,7 +28,6 @@ mix.styles([
 	'resources/assets/js/libs/jquery.js',
 	'resources/assets/js/libs/metisMenu.js',
 	'resources/assets/js/libs/sb-admin-2.js',
-	'resources/assets/js/libs/scripts.js',
 
 
 ],'./public/js/libs.js');
