@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 
-
 @section('content')
 	@if(Session::has('deleted_category'))
    <div class="alert alert-success">{{session('deleted_category')}}

@@ -14,7 +14,8 @@
         <th>Category</th>
         <th>Photo</th>
          <th>Title</th>
-         <th>Body</th>
+        <th>Actions</th>
+        <th></th>
         <th>Created</th>
         <th>Updated</th>
       </tr>
@@ -28,7 +29,8 @@
         <td>{{$post->category->name}}</td>
         <td><img height = 50 width = 50 src="{{$post->photo ? '..'.$post->photo->path : 'http://placehold.it/50x50'}}"></td>
         <td>{{$post->title}}</td>
-        <td>{{$post->body}}</td>
+        <td><a href="{{route('home.post',$post->id)}}">View post</a></td>
+        <td><a href="{{route('comments.show',$post->id)}}">View Comments</a></td>
         <td>{{$post->created_at->diffForHumans()}}</td>
         <td>{{$post->updated_at->diffForHumans()}}</td>
       </tr>
