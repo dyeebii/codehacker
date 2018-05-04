@@ -31,12 +31,16 @@ class User extends Authenticatable
         return $this->belongsTo('App\Role');
     }
     public function isAdmin(){
-        if($this->role->name == "administrator" && $this->is_active == 1){
+        if($this->role->name == "Administrator" && $this->is_active == 1){
             return true;
         }
         return false;
     }
-
+    // public function setPasswordAttribute($password){
+    //     if(!empty($password)){
+    //         $this->attributes['password']= bcrypt($password);
+    //     }
+    // }
     public function photo(){
         return $this->belongsTo('App\Photo');
     }

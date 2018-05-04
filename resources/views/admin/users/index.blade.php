@@ -1,9 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')
-	
-	<h1>Users</h1>
-	<div class="container">          
+	@if(Session::has('deleted_user'))
+   <div class="alert alert-success">{{session('deleted_user')}}
+   </div>
+  @endif
+	<h1>Users</h1>         
   <table class="table table-condensed">
     <thead>
       <tr>
@@ -22,7 +24,7 @@
      @foreach($users as $user)	
       <tr>
         <td>{{$user->id}}</td>
-        <td><img height = 50 width = 50 src="{{$user->photo ? $user->photo->path : 'http://placehold.it/50x50'}}"></td>
+        <td><img height = 50 width = 50 src="{{$user->photo ? '..'.$user->photo->path : 'http://placehold.it/50x50'}}"></td>
         <td><a href="{{route('users.edit',$user->id)}}">{{$user->name}}</a></td>
         <td>{{$user->email}}</td>
         <td>{{$user->role ? $user->role->name : 'User has no role'}}</td>
@@ -34,5 +36,4 @@
      @endif
     </tbody>
   </table>
-</div>
 @endsection

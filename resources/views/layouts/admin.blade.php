@@ -30,7 +30,8 @@
 </head>
 
 <body id="admin-page">
-
+<div class="row">
+<div class="col-sm-3">
 <div id="wrapper">
 
     <!-- Navigation -->
@@ -42,7 +43,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Home</a>
+            <a class="navbar-brand" href="{{route('home')}}">Home</a>
         </div>
         <!-- /.navbar-header -->
 
@@ -138,11 +139,11 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> Posts<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/posts">All Posts</a>
+                                <a href="{{route('posts.index')}}">All Posts</a>
                             </li>
 
                             <li>
-                                <a href="/posts/create">Create Post</a>
+                                <a href="{{route('posts.create')}}">Create Post</a>
                             </li>
 
                         </ul>
@@ -320,36 +321,31 @@
     </div>
 
 </div>
-
-
-
-
-
-
-<!-- Page Content -->
-<div id="page-wrapper">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header"></h1>
-
-                @yield('content')
-            </div>
-            <!-- /.col-lg-12 -->
-        </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.container-fluid -->
 </div>
+
+
+
+
+<div class="col col-sm-9">
+<!-- Page Content -->
+
+
+    <h1 class="page-header"></h1>
+
+    @yield('content')
+
+<!-- /.row -->
+
+<!-- /.container-fluid -->
 <!-- /#page-wrapper -->
 
 </div>
 <!-- /#wrapper -->
 
 <!-- jQuery -->
+</div>
 
-
-
+</div>
 
 @yield('footer')
 

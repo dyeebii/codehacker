@@ -6,7 +6,7 @@
 <div class="row">
 <div class="col-sm-3">
 	
-<img src="{{$user->photo ? '../../'.$user->photo->path : 'http://placehold.it/400x400'}}" class="img-responsive img-rounded">
+<img src="{{$user->photo ? '../../../'.$user->photo->path : 'http://placehold.it/400x400'}}" class="img-responsive img-rounded">
 </div>
 <div class="col-sm-9">
 {!! Form::model($user,['method'=>'PATCH','action'=>['AdminUsersController@update',$user->id],'files'=>true]) !!}
@@ -36,12 +36,16 @@
 </diV>
 
 <diV class="form-group">
-	{!! Form::submit('Save Changes',['class'=>'btn btn-primary']) !!}
+	{!! Form::submit('Save Changes',['class'=>'btn btn-primary col-sm-6']) !!}
 </diV>
 
 {!! Form::close() !!}
 
-
+{!! Form::model($user,['method'=>'DELETE','action'=>['AdminUsersController@destroy',$user->id]]) !!}
+<diV class="form-group">
+	{!! Form::submit('Delete User',['class'=>'btn btn-danger col-sm-6']) !!}
+</diV>
+{!! Form::close() !!}
 </div>	
 </div>
 <div class="row">
