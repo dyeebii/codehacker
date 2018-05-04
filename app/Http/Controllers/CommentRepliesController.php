@@ -15,6 +15,8 @@ class CommentRepliesController extends Controller
     public function index()
     {
         //
+        $replies = CommentReply::all();
+        return view('admin.comments.replies.index',compact('replies'));
     }
 
     /**
@@ -36,11 +38,9 @@ class CommentRepliesController extends Controller
     public function store(Request $request)
     {
         //
-        return "It works";
     }
     public function createReply(Request $request){
 
-        return "Itworks";
          $user = Auth::user();
         $data =[
             'comment_id'=>$request->comment_id,
@@ -87,6 +87,9 @@ class CommentRepliesController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $reply = CommentReply::findOrFail($id)->update($request->all());
+
+        return redirect('admin/comment/replies');
     }
 
     /**
@@ -98,6 +101,8 @@ class CommentRepliesController extends Controller
     public function destroy($id)
     {
         //
+        CommentReply::findOrFail($id)->delete();
+        return redirect('admin/comment/replies');
     }
     
 }

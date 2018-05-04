@@ -125,7 +125,7 @@
 
 
 
-                                    <button class="toggle-reply btn btn-primary pull-right">Reply</button>
+                                  <!--   <button class="toggle-reply btn btn-primary pull-right">Reply</button> -->
 
 
 
@@ -133,7 +133,13 @@
 
 
                     </div>
-                        <div id="comment-reply-container" class=" media">
+                        
+
+
+                            @endif
+                
+                     @endforeach
+                     <div id="comment-reply-container" class=" media">
 
                                         {!! Form::open(['method'=>'POST', 'action'=> 'CommentRepliesController@createReply']) !!}
                                              <div class="form-group">
@@ -146,18 +152,6 @@
                                              </div>
                                         {!! Form::close() !!}
                                         </div>
-
-                             @else
-
-
-                                 <h1 class="text-center">No Replies</h1>
-
-
-
-
-                            @endif
-                
-                     @endforeach
 
             @endif
 

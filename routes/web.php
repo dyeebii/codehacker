@@ -19,7 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
 Route::group(['middleware'=>'admin'],function(){
 
 	Route::get('/admin',function(){
@@ -37,7 +36,7 @@ Route::group(['middleware'=>'admin'],function(){
 
 Route::group(['middleware'=>'auth'],function(){
 
-	Route::get('comment/reply','CommentRepliesController@createReply');
+	Route::post('comment/reply','CommentRepliesController@createReply');
 
 });
 
