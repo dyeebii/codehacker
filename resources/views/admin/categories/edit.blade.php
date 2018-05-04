@@ -15,13 +15,15 @@
 			{!! Form::text('name',null,['class'=>'form-control']) !!}
 			</diV>
 			<diV class="form-group">
-			{!! Form::submit('Update Category',['class'=>'btn btn-primary']) !!}
+			{!! Form::submit('Update Category',['class'=>'btn btn-primary col-sm-6']) !!}
 			</diV>
 
 			{!! Form::close() !!}
-			
-			{!! Form::model($category,['method'=>'PATCH','action'=>['AdminCategoriesController@update',$category->id],'files'=>true]) !!}
 
+			{!! Form::model($category,['method'=>'DELETE','action'=>['AdminCategoriesController@destroy',$category->id],'files'=>true]) !!}
+				<diV class="form-group">
+			{!! Form::submit('Delete Category',['class'=>'btn btn-danger col-sm-6']) !!}
+			</diV>
 			{!! Form::close() !!}
 		</div>
 
