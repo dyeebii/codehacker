@@ -25,8 +25,8 @@ class PostsCreateRequest extends FormRequest
     {
         return [
             //
-        'category_id'=>'required',
         'title'=>'required',
+        'category_id'=>'required',
         'body'=>'required'
         ];
     }

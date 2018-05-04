@@ -8,12 +8,12 @@
 
 	<diV class="form-group">	
 	{!! Form::label('title','Title: ') !!}
-	{!! Form::text('Title',null,['class'=>'form-control']) !!}
+	{!! Form::text('title',null,['class'=>'form-control']) !!}
 	</diV>
 
 	<diV class="form-group">	
 	{!! Form::label('category_id','Category: ') !!}
-	{!! Form::select('category_id',[''=>'Choose Options'],null,['class'=>'form-control']) !!}
+	{!! Form::select('category_id',[''=>'Choose Options'] + $category,null,['class'=>'form-control']) !!}
 	</diV>
 
 	<diV class="form-group">	
